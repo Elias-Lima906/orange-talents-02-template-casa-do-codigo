@@ -22,11 +22,8 @@ public class CostumerController {
 	@PostMapping
 	@Transactional
 	public CostumerResponseDTO postMethodName(@RequestBody @Valid CostumerRequestDTO request) throws GlobalException {
-
 		@Valid Costumer costumer = request.toModel(manager);
-
 		manager.persist(costumer);
-
 		return new CostumerResponseDTO(costumer);
 	}
 
